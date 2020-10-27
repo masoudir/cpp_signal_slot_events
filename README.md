@@ -1,6 +1,6 @@
 Github Page: [https://github.com/masoud-iranmehr/cpp_signal_slot_events](https://github.com/masoud-iranmehr/cpp_signal_slot_events)
 
-# Introduction to simple_udp_proxy
+# Introduction to cpp_signal_slot_events
 This is a C++ implementation of the cpp_signal_slot_events. This code, provides you an event based C++ programming tool 
 by determining SIGNALs and SLOTs and making them connected to each other. Whenever the SIGNAL fires, then its related SLOT
 starts to execute.
@@ -17,11 +17,6 @@ git clone https://github.com/masoud-iranmehr/cpp_signal_slot_events
 cd cpp_signal_slot_events
 ```
 
-Then copy "event.hpp" to your project and include it in your source code. Then if you are using CMAKE for building your
-targets, do not forget including these lines for introducing "thread" library in "CMakelists.txt".
- 
-    set(CMAKE_CXX_STANDARD 11)
-    set(CMAKE_CXX_FLAGS -pthread)
    
 Then for running it using CMAKE just follow this:
 
@@ -66,6 +61,38 @@ Output would be as similar as this:
     
     bye!
 
+#How to implement on your C++ project
+You just need to copy "event.hpp" to your project and include it in your source code. Then if you are using CMAKE for 
+building your targets, do not forget including these lines for introducing "thread" library in "CMakelists.txt".
+ 
+    set(CMAKE_CXX_STANDARD 11)
+    set(CMAKE_CXX_FLAGS -pthread)
+    
+Then include necessay files:
+
+    #include <thread>
+    #include "PATH_TO_EVENT_HPP_FILE/event.hpp"
+
+Then write your SLOT function as this (example):
+
+    // Example function for SLOT
+    void my_slot()
+    {
+        std::cout << "slot executed" << std::endl;
+    }
+
+Then create a SIGNAL as this (example):
+
+    Signal my_signal("sig1");
+    
+Then introduce the SIGNAL and SLOT to the Event class and making a new thread:
+
+    std::thread th(&Event::event_checker, Event("event1", &my_signal, my_slot));
+    
+Then whenever you need to trigger the signal, you jest need to write this line:
+
+    my_signal.fire();
+    
 #Note
 For disabling logging implemented on "event.hpp", you just need to undefine "EVENT_LOG" in "main.cpp":
 
