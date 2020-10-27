@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g  -rdynamic CMakeFiles/cpp_signal_slot_events.dir/main.cpp.o  -o cpp_signal_slot_events 

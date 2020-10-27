@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g  -rdynamic CMakeFiles/test_event.dir/main.cpp.o  -o test_event 

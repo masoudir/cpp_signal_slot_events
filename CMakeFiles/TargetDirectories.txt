@@ -1,3 +1,0 @@
-/home/a/test/untitled2/CMakeFiles/rebuild_cache.dir
-/home/a/test/untitled2/CMakeFiles/edit_cache.dir
-/home/a/test/untitled2/CMakeFiles/test_event.dir
