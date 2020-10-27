@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/a/test/untitled2/lib/event.hpp
+iostream
+-
+thread
+-
+ctime
+-
+
+/home/a/test/untitled2/main.cpp
+iostream
+-
+thread
+-
+unistd.h
+/home/a/test/untitled2/unistd.h
+lib/event.hpp
+/home/a/test/untitled2/lib/event.hpp
+
