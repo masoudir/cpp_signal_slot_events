@@ -61,7 +61,9 @@ Output would be as similar as this:
     
     bye!
 
+
 #How to implement on your C++ project
+
 You just need to copy "event.hpp" to your project and include it in your source code. Then if you are using CMAKE for 
 building your targets, do not forget including these lines for introducing "thread" library in "CMakelists.txt".
  
@@ -94,6 +96,7 @@ Then whenever you need to trigger the signal, you jest need to write this line:
     my_signal.fire();
     
 #Note
+
 For disabling logging implemented on "event.hpp", you just need to undefine "EVENT_LOG" in "main.cpp":
 
     // #define EVENT_LOG
